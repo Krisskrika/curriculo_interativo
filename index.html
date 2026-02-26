@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Currículo online — Cristiane dos Santos (Analista de BI/Dados Jr)" />
+  <title>Cristiane dos Santos — BI/Dados Jr</title>
+
+  <style>
+    /* ============ THEMES ============ */
+    :root{
+      --radius: 18px;
+      --radius2: 24px;
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+
+      /* accent */
+      --accent: #7c3aed;     /* roxo */
+      --accent2: #22c55e;    /* verde */
+      --accent3: #38bdf8;    /* azul claro */
+    }
+
+    /* Light theme */
+    [data-theme="light"]{
+      --bg: #f5f7fb;
+      --panel: rgba(17, 24, 39, .06);
+      --panel2: rgba(17, 24, 39, .08);
+      --text: rgba(17,24,39,.94);
+      --muted: rgba(17,24,39,.70);
+      --subtle: rgba(17,24,39,.55);
+      --stroke: rgba(17,24,39,.14);
+      --navbg: rgba(245,247,251,.72);
+      --herobg1: rgba(255,255,255,.72);
+      --herobg2: rgba(255,255,255,.55);
+    }
+
+    /* Soft-dark theme (default) */
+    [data-theme="dark"]{
+      --bg: #0f1426; /* mais claro que antes */
+      --panel: rgba(255,255,255,.075);
+      --panel2: rgba(255,255,255,.095);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --subtle: rgba(255,255,255,.56);
+      --stroke: rgba(255,255,255,.16);
+      --navbg: rgba(15,20,38,.62);
+      --herobg1: rgba(255,255,255,.085);
+      --herobg2: rgba(255,255,255,.055);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", "Noto Sans", "Liberation Sans", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(124,58,237,.18), transparent 60%),
+        radial-gradient(1000px 650px at 80% 0%, rgba(34,197,94,.12), transparent 55%),
+        radial-gradient(900px 600px at 50% 90%, rgba(56,189,248,.10), transparent 60%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    .container{
+      width: min(1100px, 92vw);
+      margin: 0 auto;
+      padding: 26px 0 80px;
+    }
+
+    /* Top nav */
+    .nav{
+      position: sticky;
+      top: 14px;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: var(--navbg);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      border-radius: 999px;
+      padding: 10px 12px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(124,58,237,.14);
+    }
+    .brand strong{ font-size: 14px; letter-spacing:.2px;}
+    .brand span{ font-size: 12px; color: var(--muted); display:block; margin-top: -2px; }
+
+    .nav-links{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 13px;
+      transition: .2s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+    [data-theme="light"] .pill{
+      background: rgba(17,24,39,.03);
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.07);
+      color: var(--text);
+    }
+    [data-theme="light"] .pill:hover{
+      background: rgba(17,24,39,.06);
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 650;
+      transition: .2s ease;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    [data-theme="light"] .btn{
+      background: rgba(17,24,39,.04);
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.09);
+    }
+    [data-theme="light"] .btn:hover{
+      background: rgba(17,24,39,.07);
+    }
+    .btn.primary{
+      border-color: rgba(124,58,237,.35);
+      background: rgba(124,58,237,.22);
+    }
+    .btn.primary:hover{
+      background: rgba(124,58,237,.30);
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, var(--herobg1), var(--herobg2));
+      box-shadow: var(--shadow);
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(124,58,237,.18), transparent 35%),
+        radial-gradient(circle at 70% 30%, rgba(34,197,94,.10), transparent 38%),
+        radial-gradient(circle at 50% 70%, rgba(56,189,248,.10), transparent 42%);
+      filter: blur(18px);
+      pointer-events:none;
+    }
+    .hero-grid{
+      position: relative;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items: start;
+    }
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+    h1{
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: -.4px;
+      line-height: 1.05;
+    }
+    .subtitle{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .meta{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 0;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    [data-theme="light"] .chip{
+      background: rgba(17,24,39,.03);
+    }
+    .chip b{ color: var(--text); font-weight: 700; }
+
+    .cta{
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+    }
+    [data-theme="light"] .cta{
+      background: rgba(17,24,39,.03);
+    }
+    .cta h3{
+      margin: 2px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing:.2px;
+      font-weight: 700;
+    }
+    .btn-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .small{
+      font-size: 12px;
+      color: var(--subtle);
+      line-height: 1.35;
+      margin-top: 8px;
+    }
+
+    /* Sections */
+    section{
+      margin-top: 22px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    [data-theme="light"] section{
+      background: rgba(255,255,255,.75);
+    }
+    .section-header{
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--stroke);
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      background: rgba(255,255,255,.04);
+    }
+    [data-theme="light"] .section-header{
+      background: rgba(17,24,39,.02);
+    }
+    .section-header h2{
+      margin:0;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .section-header .hint{
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .section-body{
+      padding: 18px 20px 20px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    @media (max-width: 900px){
+      .grid-2{ grid-template-columns: 1fr; }
+    }
+
+    /* Badges */
+    .badges{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .badge{
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: var(--muted);
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+    }
+    [data-theme="light"] .badge{
+      background: rgba(17,24,39,.03);
+    }
+    .badge .mark{
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent2);
+      box-shadow: 0 0 0 6px rgba(34,197,94,.12);
+    }
+
+    /* Timeline cards */
+    .timeline{
+      display:flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .card{
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      border-radius: 18px;
+      padding: 14px 14px 12px;
+    }
+    [data-theme="light"] .card{
+      background: rgba(17,24,39,.02);
+    }
+    .card h3{
+      margin: 0;
+      font-size: 15px;
+      letter-spacing: .15px;
+    }
+    .card .where{
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items:center;
+    }
+    .tag{
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+    }
+    [data-theme="light"] .tag{
+      background: rgba(17,24,39,.03);
+    }
+    ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    /* details */
+    details{
+      margin-top: 10px;
+      border-top: 1px dashed var(--stroke);
+      padding-top: 10px;
+    }
+    summary{
+      cursor:pointer;
+      color: var(--text);
+      font-weight: 750;
+      list-style: none;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      user-select: none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    summary .caret{
+      width: 18px;
+      height: 18px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius: 8px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-weight: 900;
+      transform: translateY(-1px);
+    }
+    details[open] summary .caret{ transform: rotate(90deg); }
+
+    /* Back-to-top */
+    .top{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: .2s ease;
+    }
+    .top.show{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    footer{
+      margin-top: 18px;
+      color: var(--subtle);
+      font-size: 12px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body data-theme="dark">
+  <div class="container">
+
+    <nav class="nav" aria-label="Menu">
+      <a class="brand" href="#inicio">
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <strong>Cristiane dos Santos</strong>
+          <span>Analista de BI/Dados Jr</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a class="pill" href="#resumo">Resumo</a>
+        <a class="pill" href="#competencias">Competências</a>
+        <a class="pill" href="#projetos">Projetos</a>
+        <a class="pill" href="#experiencia">Experiência</a>
+        <a class="pill" href="#formacao">Formação</a>
+        <a class="pill" href="#idiomas">Idiomas</a>
+        <button class="btn" id="themeBtn" type="button" aria-label="Alternar tema">🌙/☀️</button>
+      </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Cristiane dos Santos</h1>
+          <p class="subtitle">
+            BI & Dados Jr • Power BI • SQL • Power Query • KPIs • Excel avançado
+          </p>
+
+          <div class="meta">
+            <div class="chip"><b>Local:</b> São Paulo – SP</div>
+            <div class="chip"><b>WhatsApp:</b> (11) 99153-1148</div>
+            <div class="chip"><b>E-mail:</b> <span id="emailText">krisskrika@hotmail.com</span></div>
+          </div>
+
+          <p class="subtitle" style="margin-top:16px;">
+            <b>Objetivo:</b> Atuar como Analista de BI/Dados Jr, contribuindo com análises orientadas a negócio,
+            construção de dashboards em Power BI, consultas SQL e monitoramento de KPIs para suporte à tomada de decisão estratégica.
+          </p>
+        </div>
+
+        <aside class="cta" aria-label="Links e ações">
+          <h3>Links rápidos</h3>
+
+          <div class="btn-row">
+            <a class="btn primary" href="https://www.linkedin.com/in/cristianesantos12" target="_blank" rel="noopener">
+              LinkedIn ↗
+            </a>
+            <a class="btn" href="https://app.xperiun.com/in/cristianesantos" target="_blank" rel="noopener">
+              Portfólio ↗
+            </a>
+           <a class="btn" href="Cristiane_Santos_CV.pdf" target="_blank" rel="noopener">
+  	     Baixar PDF
+           </a>
+            <button class="btn" id="copyEmailBtn" type="button">
+              Copiar e-mail
+            </button>
+          </div>
+
+          <p class="small">
+            Dica: depois a gente publica isso no GitHub Pages e você usa como “currículo online”.
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <section id="resumo">
+      <div class="section-header">
+        <h2>Resumo Profissional</h2>
+        <span class="hint">Visão rápida • otimizado para ATS</span>
+      </div>
+      <div class="section-body">
+        <p style="margin:0;color:var(--muted);line-height:1.55;font-size:14px;">
+          Profissional em transição consolidada para <b>Business Intelligence</b> e <b>Análise de Dados</b>, com formação em
+          <b>Ciência da Computação</b> e <b>Banco de Dados</b>, e <b>Especialização em Análise de Dados em andamento</b>.
+          Experiência em <b>Power BI</b>, <b>Power Query (ETL)</b>, <b>modelagem dimensional (Star Schema)</b> e <b>SQL</b>
+          para extração, tratamento e validação de dados. Forte atuação com <b>Excel avançado</b>, monitoramento de <b>KPIs</b>
+          e construção de relatórios gerenciais para suporte à tomada de decisão.
+        </p>
+      </div>
+    </section>
+
+    <section id="competencias">
+      <div class="section-header">
+        <h2>Competências Técnicas</h2>
+        <span class="hint">Power BI • SQL • ETL • KPIs</span>
+      </div>
+      <div class="section-body">
+        <div class="badges" aria-label="Lista de competências">
+          <span class="badge"><span class="mark"></span>Power BI (Modelagem, DAX, Visualização, Service)</span>
+          <span class="badge"><span class="mark"></span>Power Query (ETL)</span>
+          <span class="badge"><span class="mark"></span>Modelagem Dimensional (Star Schema)</span>
+          <span class="badge"><span class="mark"></span>SQL (análise, manipulação e validação)</span>
+          <span class="badge"><span class="mark"></span>Excel Avançado (indicadores e relatórios executivos)</span>
+          <span class="badge"><span class="mark"></span>Monitoramento de KPIs</span>
+          <span class="badge"><span class="mark"></span>Análise Exploratória (EDA)</span>
+          <span class="badge"><span class="mark"></span>Storytelling com dados</span>
+          <span class="badge"><span class="mark"></span>Noções de Python para análise de dados</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="section-header">
+        <h2>Projetos / Portfólio</h2>
+        <span class="hint">Com link direto</span>
+      </div>
+      <div class="section-body grid-2">
+        <div class="card">
+          <h3>Dashboard de Performance de Vendas (Power BI)</h3>
+          <p class="subtitle" style="margin-top:8px;">
+            Painel com KPIs de faturamento, meta atingida, mix de produtos e desempenho por período/categoria.
+          </p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+            <span class="tag">Power BI</span>
+            <span class="tag">DAX</span>
+            <span class="tag">Power Query</span>
+          </div>
+
+          <div style="margin-top:14px;">
+            <a class="btn" href="https://app.xperiun.com/in/cristianesantos" target="_blank" rel="noopener">
+              Ver projeto ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Dashboard Financeiro Executivo</h3>
+          <p class="subtitle" style="margin-top:8px;">
+            Indicadores de receita, custos e lucratividade com visão gerencial para priorização de ações.
+          </p>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+            <span class="tag">Power BI</span>
+            <span class="tag">KPIs</span>
+            <span class="tag">Storytelling</span>
+          </div>
+
+          <div style="margin-top:14px;">
+            <a class="btn" href="https://app.xperiun.com/in/cristianesantos" target="_blank" rel="noopener">
+              Ver projeto ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="section-header">
+        <h2>Experiência Profissional</h2>
+        <span class="hint">Cards com expandir/recolher</span>
+      </div>
+
+      <div class="section-body">
+        <div class="timeline">
+
+          <article class="card">
+            <h3>Azul Linhas Aéreas — Analista de Revenue Management Jr</h3>
+            <div class="where">
+              <span class="tag">06/2022 – 12/2022</span>
+              <span class="tag">Análise • KPIs • Power BI • Excel</span>
+            </div>
+
+            <details>
+              <summary><span class="caret">›</span>Mais detalhes</summary>
+              <ul>
+                <li>Análise e validação de dados operacionais e financeiros para suporte à estratégia comercial.</li>
+                <li>Construção de relatórios gerenciais e dashboards em Excel e Power BI.</li>
+                <li>Monitoramento de KPIs de receita, mercado e concorrência.</li>
+                <li>Apoio a estudos analíticos: sazonalidade, tendências e identificação de oportunidades.</li>
+                <li>Suporte à tomada de decisão baseada em dados.</li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="card">
+            <h3>Operadora de Atendimento Bilíngue (Espanhol)</h3>
+            <div class="where">
+              <span class="tag">10/2021 – 07/2022</span>
+              <span class="tag">GDS • Amadeus • SkySpeed</span>
+            </div>
+
+            <details>
+              <summary><span class="caret">›</span>Mais detalhes</summary>
+              <ul>
+                <li>Atendimento a clientes e agências.</li>
+                <li>Gestão de reservas via sistemas GDS (Amadeus e SkySpeed).</li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="card">
+            <h3>Gol Linhas Aéreas — Assistente Administrativo Comercial</h3>
+            <div class="where">
+              <span class="tag">10/2010 – 07/2015</span>
+              <span class="tag">Excel • Relatórios • Mercado</span>
+            </div>
+
+            <details>
+              <summary><span class="caret">›</span>Mais detalhes</summary>
+              <ul>
+                <li>Elaboração de relatórios de produtividade e vendas com análises em Excel.</li>
+                <li>Estudos de mercado internacional para apoio às decisões comerciais.</li>
+                <li>Padronização de processos e suporte à área comercial.</li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="card">
+            <h3>Agente de Atendimento Bilíngue (Grupos Internacionais)</h3>
+            <div class="where">
+              <span class="tag">01/2007 – 09/2010</span>
+              <span class="tag">Operação • Relatórios</span>
+            </div>
+
+            <details>
+              <summary><span class="caret">›</span>Mais detalhes</summary>
+              <ul>
+                <li>Gerenciamento de reservas e emissões internacionais de grupos.</li>
+                <li>Relatórios operacionais e suporte a negociações.</li>
+              </ul>
+            </details>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="formacao">
+      <div class="section-header">
+        <h2>Formação</h2>
+        <span class="hint">Acadêmica & Complementar</span>
+      </div>
+      <div class="section-body grid-2">
+        <div class="card">
+          <h3>Formação Acadêmica</h3>
+          <ul>
+            <li><b>Especialização em Análise de Dados</b> — Xperiun | Conclusão prevista: 2026</li>
+            <li><b>Tecnologia em Banco de Dados</b> — UNINOVE (2022)</li>
+            <li><b>Bacharelado em Ciência da Computação</b> — UNINOVE (2005)</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Formação Complementar</h3>
+          <ul>
+            <li>Power BI Fundamental — Xperiun (35h)</li>
+            <li>SQL Avançado para Analistas e Consultores — Xperiun (35h)</li>
+            <li>Power Query Avançado — Xperiun (11h)</li>
+            <li>Python para Análise de Dados — Xperiun (9h)</li>
+            <li>API com Python — Xperiun (3h)</li>
+            <li>Estatística para Análise de Dados — Xperiun (9h)</li>
+            <li>Power Center — MJV Technology & Innovation (12h)</li>
+            <li>Figma 2.0 — Xperiun (5h)</li>
+            <li>Be a Bá da IA — Xperiun (6h)</li>
+            <li>Desvendando a Inteligência Artificial e o ChatGPT — Xperiun (1h)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="idiomas">
+      <div class="section-header">
+        <h2>Idiomas</h2>
+        <span class="hint">Comunicação</span>
+      </div>
+      <div class="section-body">
+        <div class="badges">
+          <span class="badge"><span class="mark"></span>Espanhol — Fluente</span>
+          <span class="badge"><span class="mark"></span>Inglês — Intermediário (leitura e escrita)</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p style="margin: 0;">
+        © <span id="year"></span> • Currículo online — Cristiane dos Santos
+      </p>
+    </footer>
+  </div>
+
+  <button class="btn top" id="topBtn" type="button" aria-label="Voltar ao topo">
+    ↑ Topo
+  </button>
+
+  <script>
+    // Ano automático
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Copiar e-mail
+    const email = "krisskrika@hotmail.com";
+    const copyBtn = document.getElementById("copyEmailBtn");
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(email);
+        copyBtn.textContent = "Copiado ✓";
+        setTimeout(() => (copyBtn.textContent = "Copiar e-mail"), 1500);
+      } catch (e) {
+        prompt("Copie o e-mail:", email);
+      }
+    });
+
+    // Botão voltar ao topo
+    const topBtn = document.getElementById("topBtn");
+    const toggleTop = () => {
+      if (window.scrollY > 500) topBtn.classList.add("show");
+      else topBtn.classList.remove("show");
+    };
+    window.addEventListener("scroll", toggleTop);
+    toggleTop();
+    topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    // Tema: claro/escuro com persistência
+    const body = document.body;
+    const themeBtn = document.getElementById("themeBtn");
+
+    function setTheme(theme){
+      body.setAttribute("data-theme", theme);
+      localStorage.setItem("cv_theme", theme);
+      themeBtn.textContent = theme === "dark" ? "☀️" : "🌙";
+      themeBtn.setAttribute("aria-label", theme === "dark" ? "Mudar para tema claro" : "Mudar para tema escuro");
+    }
+
+    const saved = localStorage.getItem("cv_theme");
+    if (saved === "light" || saved === "dark") setTheme(saved);
+    else setTheme("dark"); // padrão: dark mais claro
+
+    themeBtn.addEventListener("click", () => {
+      const current = body.getAttribute("data-theme");
+      setTheme(current === "dark" ? "light" : "dark");
+    });
+  </script>
+</body>
+</html>
